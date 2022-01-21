@@ -275,10 +275,10 @@ getValFromLS.map((showVal) => {
     uploadTeam.innerHTML += `
     
     <div class="col-md-3 teamWrapper">
-        <img class="mb-3" src="./img/boy3.png" alt="profile">
-        <h5 class="mb-2">ROHAN MOSTOFA</h5>
-        <h6 class="mb-2">MARKETING DIRECTOR</h6>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quisquam?</p>
+        <img class="mb-3" src="${showVal.photo}" alt="profile">
+        <h5 class="mb-2">${showVal.nam}</h5>
+        <h6 class="mb-2">${showVal.skills}</h6>
+        <p>${showVal.details}</p>
         <ul class="socialLiinks">
             <li>
                 <a href="#"><i class="fab fa-facebook-square"></i></a>
