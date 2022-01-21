@@ -1,0 +1,254 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+div.mainSection{
+    padding: 70px 20px;
+    background-image: url(../img/bgimage.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div.card{
+    background-color:  rgb(20 20 20 / 30%) !important;
+    padding: 40px 30px !important;
+}
+
+div.wrapper{
+    margin: auto !important;
+}
+
+div.defaultDesign{
+    padding: 60px 10px;
+    background-color: rgba(255, 255, 255, 0.274);
+    border-radius: 10px;
+    box-shadow: 1px 1px 20px 7px #00000085;
+}
+
+
+
+
+/* age calculator design start */
+
+
+
+div#mainSection{
+    padding: 70px 20px;
+    background-image: url(../img/bgimage4.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+div.wrapper2{
+    margin: auto;
+    padding: 60px 50px;
+    background: rgba(102, 102, 102, 0.26);
+    border-radius: 10px;
+    box-shadow: 1px 1px 25px 2px black;
+}
+
+h1{
+    text-align: center;
+    padding-bottom: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+h4{
+    padding-bottom: 10px;
+}
+
+h4#alertMsg{
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+input{
+    width: 100%;
+}
+
+input#calculate{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 5px;
+}
+input#reset{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 5px;
+}
+
+div#border{
+    border-bottom: 4px solid rgba(255, 255, 255, 0.384);
+    padding-top: 60px;
+    margin-bottom: 60px;
+}
+
+p.show{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 26px;
+    margin-bottom: 0px;
+}
+
+
+/* age calculator design end */
+
+
+/* product design start */
+
+
+div.mainSection3{
+    padding: 70px 20px;
+    background-image: url(../img/bgimage5.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#addProduct{
+    z-index: 100 !important;
+}
+
+div.showCard{
+    display: none;
+    transition: all 0.4s;
+    transform-origin: top;
+    margin-bottom: 40px;
+}
+
+div.productWrapper{
+    background-color: rgba(0, 0, 0, 0.596);
+    color: white;
+    padding: 20px 20px !important;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: none;
+    transition: all 0.3s;
+}
+
+div.productWrapper:hover{
+    box-shadow: 1px 1px 20px 3px rgb(0, 247, 255);
+}
+
+@media only screen and (min-width:992px) and (max-width:1400px) {
+
+    div.productWrapper{
+        width: 24% !important;
+    }
+
+}
+
+div.productWrapper:last-child{
+    margin-right: 0px;
+}
+
+div.productWrapper img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid orange;
+}
+
+
+/* product design start */
+
+
+
+
+/* team member design start */
+
+
+
+div.mainSection4{
+    padding: 70px 20px;
+    background-image: url(../img/bgimage2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+div.teamWrapper{
+    margin-right: 18px;
+    margin-bottom: 18px;
+    background-color: rgba(0, 255, 255, 0.274);
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid rgb(0, 255, 255);
+    box-shadow: 0px 0px 30px 1px black;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+div.teamWrapper:hover{
+    background-color: rgba(0, 0, 0, 0.438);
+    transform: scale(1.05);
+}
+
+@media only screen and (min-width:992px) and (max-width:1400px) {
+
+    div.teamWrapper{
+        width: 23.40% !important;
+    }
+
+}
+
+div.teamWrapper img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+div.teamWrapper h5{
+    font-size: 18px !important;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+div.teamWrapper h6{
+    font-size: 15px !important;
+    font-weight: 500;
+}
+
+div.teamWrapper p{
+    margin-bottom: 0 !important;
+}
+
+ul.socialLiinks{
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+ul.socialLiinks li{
+    display: inline-block;
+    margin-right: 15px;
+}
+ul.socialLiinks li:last-child{
+    margin-right: 0px;
+}
+
+ul.socialLiinks li a{
+    width: 40px;
+    height: 40px;
+    display: block;
+    background-color: tomato;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+ul.socialLiinks li a:hover{
+    background-color: rgba(255, 99, 71, 0.692);
+}
+
+ul.socialLiinks li a i{
+    font-size: 18px;
+    color: white;
+    padding: 11px;
+}
+
+/* team member design end */
+

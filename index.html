@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 14 Assignment</title>
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/fontawesome.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="./js/jquery.js"></script>
+    <script src="./js/bootstrap.popper.min.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+   
+
+<!-- age calculator structure start -->
+
+
+<div id="mainSection" class="conatiner-fluid">
+    <div class="container">
+        <h1>How old am i?</h1>
+        <div class="col-md-10 wrapper2">
+            <div class="row mb-5">
+                <h4>Today's Date :</h4>
+                <div class="col-md-12">
+                    <input id="todayDate" type="text" placeholder="Date" class="form-control" readonly>
+                </div>
+            </div>
+
+
+            <div class="row mb-5">
+                <h4>Date Of Birth :</h4>
+                <div class="col-md-12">
+                    <input id="date2" type="date" placeholder="Date" class="form-control">
+                </div>
+                
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-8">
+                    <input id="calculate" type="submit" class="btn btn-success" value="Calculate">
+                </div>
+
+                <div class="col-md-4">
+                    <input id="reset" type="submit" class="btn btn-danger" value="Reset">
+                </div>
+            </div>
+
+            <h4 id="alertMsg3"></h4>
+
+            <div id="border"></div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <p class="show">Your Age is</p>
+                </div>
+                <div class="col-md-8">
+                    <input style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" id="result1" type="text" class="form-control" readonly>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <p class="show">Your Age in Weeks</p>
+                </div>
+                <div class="col-md-8">
+                    <input style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" id="result7" type="text" class="form-control" readonly>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <p class="show">Your Age in Days</p>
+                </div>
+                <div class="col-md-8">
+                    <input style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" id="result2" type="text" class="form-control" readonly>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <p class="show">Your Age in Hours</p>
+                </div>
+                <div class="col-md-8">
+                    <input style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" id="result3" type="text" class="form-control" readonly>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <p class="show">Your Age in Minutes</p>
+                </div>
+                <div class="col-md-8">
+                    <input style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" id="result4" type="text" class="form-control" readonly>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <p class="show">Your Age in Seconds</p>
+                </div>
+                <div class="col-md-8">
+                    <input style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" id="result5" type="text" class="form-control" readonly>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <p class="show">Your Age in Milliseconds</p>
+                </div>
+                <div class="col-md-8">
+                    <input style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" id="result6" type="text" class="form-control" readonly>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- age calculator structure end -->
+
+
+
+<!-- product structure start -->
+
+
+
+<div class="mainSection3">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 m-auto wrapper">
+
+                <div class="form-group">
+                    <input id="addProduct" type="submit" class="btn btn-primary w-100" value="ADD NEW PRODUCT">
+                </div>
+
+                <div class="card showCard">
+                    <div class="card-header alert-dismissible">
+                        <button style="color: white;" id="closeCard" class="btn-close"></button>
+                        <h1 class="text-center text-white">ADD NEW PRODUCT</h1>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="form-group mb-3">
+                            <input id="pdName" type="text" class="form-control" placeholder="Product Name">
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <textarea class="form-control" placeholder="Product Details" id="pdDetails" rows="3"></textarea>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <input id="pdRPrice" type="number" class="form-control" placeholder="Product Price">
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <input id="pdSPrice" type="number" class="form-control" placeholder="Sale Price">
+                        </div>
+
+                        <div class="form-group">
+                            <input id="createPd" type="submit" class="btn btn-success w-100" value="CREATE PRODUCT">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="pList" style="margin: auto 20px;" class="row mt-5 justify-content-center">
+            
+        </div>
+    </div>
+</div>
+
+
+
+<!-- product structure end -->
+
+
+<!-- team member structure start -->
+
+
+
+<div class="mainSection4">
+    <div class="container">
+        <h1 class="text-center mb-3">Team member with LS</h1>
+        <div id="uploadTeam" class="row text-center">
+
+            
+
+        </div>
+    </div>
+</div>
+
+
+
+<!-- team member structure end -->
+
+
+
+
+
+
+<script src="./js/functions.js"></script>
+<script src="./js/app.js"></script>
+</body>
+</html>
