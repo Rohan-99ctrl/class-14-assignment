@@ -28,35 +28,7 @@ function dataGet(key){
 }
 
 
-// Team member with LS
 
-/**
- * sent data
- * @param {*} keyOne 
- * @param {*} data 
- */
-
-function teamDataSent(keyOne, data){
-
-    let teamDataConvert = JSON.stringify(data);
-    localStorage.setItem(keyOne, teamDataConvert);
-
-}
-
-
-/**
- * team data get
- * @param {*} keyTwo 
- * @returns 
- */
-
-
-function teamDataGet(keyTwo){
-
-    let teamDataGet = localStorage.getItem(keyTwo);
-    return JSON.parse(teamDataGet);
-
-}
 
 
 

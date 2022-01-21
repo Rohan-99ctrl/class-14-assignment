@@ -66,21 +66,36 @@ calculate.onclick = () => {
         
         let todaytime = new Date();
         let birthTime = new Date(dateOfBirth.value);
+        let ageMilliseconds = Math.floor(todaytime.getTime() - birthTime.getTime());
 
-        let ageMilliseconds = Math.floor(Math.abs(todaytime.getTime() - birthTime.getTime()));
-        let ageSeconds =  Math.floor(Math.abs(ageMilliseconds/1000));
-        let ageMinutes =  Math.floor(Math.abs(ageSeconds/60));
-        let ageHours =  Math.floor(Math.abs(ageMinutes/60));
-        let ageDays =  Math.floor(Math.abs(ageHours/24));
-        let ageWeeks =  Math.floor(Math.abs(ageDays/7));
-        let ageYears =  Math.floor(Math.abs((ageDays/30.42/12)));
-        let ageMonths =  Math.floor(Math.abs((ageDays/30.42) - (ageYears*12)));
 
+        // let ageSeconds = Math.floor(ageMilliseconds/1000);
+        // let ageMinutes = Math.floor(ageSeconds/60);
+        // let ageHours = Math.floor(ageMinutes/60);
+        // let ageDays = Math.floor(ageHours/24);
+        // let total_months = Math.floor(ageDays/30);
+        // let ageYears = Math.floor(total_months/12);
+    
+        // let ageMonths = total_months - (ageYears*12); 
+        // let days = total_days - (ageYears*12*30) - (ageMonths*30);
+
+
+
+
+        let ageSeconds =  Math.floor(ageMilliseconds/1000);
+        let ageMinutes =  Math.floor(ageSeconds/60);
+        let ageHours =  Math.floor(ageMinutes/60);
+        let ageDays =  Math.floor(ageHours/24);
+        let ageWeeks =  Math.floor(ageDays/7);
+        let ageYears =  Math.floor(ageDays/30.4166/12);
+        let ageMonths =  Math.floor((ageDays/30.4166) - (ageYears*12));
+
+        let dayCal = Math.floor(ageDays - (ageYears*12*30.4166) - (ageMonths*30.4166));
 
         console.log(ageMonths);
 
 
-        calculateAge.value = `${ageYears} Years & ${ageMonths + 1} Months`;
+        calculateAge.value = `${ageYears} Years & ${ageMonths} Months, ${dayCal} Days`;
         calculateWeeks.value = `${ageWeeks} Weeks`;
         calculateDays.value = `${ageDays} Days`;
         calculateHours.value = `${ageHours} Hours`;
@@ -263,11 +278,11 @@ closeCard.addEventListener('click', function(){
 //     }
 // ];
 
-// teamDataSent('teamData', teamData);
+// dataSent('teamData', teamData);
 
 const uploadTeam = document.querySelector('#uploadTeam');
 
-let getValFromLS = teamDataGet('teamData');
+let getValFromLS = dataGet('teamData');
 
 
 getValFromLS.map((showVal) => {
