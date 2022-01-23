@@ -23,7 +23,12 @@
 function dataGet(key){
 
     let get = localStorage.getItem(key);
-    return JSON.parse(get);
+
+    if(get){
+        return JSON.parse(get);
+    }else{
+        return false;
+    }
 
 }
 

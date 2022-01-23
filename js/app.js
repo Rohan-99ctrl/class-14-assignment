@@ -87,10 +87,10 @@ calculate.onclick = () => {
         let ageHours =  Math.floor(ageMinutes/60);
         let ageDays =  Math.floor(ageHours/24);
         let ageWeeks =  Math.floor(ageDays/7);
-        let ageYears =  Math.floor(ageDays/30.4166/12);
-        let ageMonths =  Math.floor((ageDays/30.4166) - (ageYears*12));
+        let ageYears =  Math.floor(ageDays/30.417/12);
+        let ageMonths =  Math.floor((ageDays/30.417) - (ageYears*12));
 
-        let dayCal = Math.floor(ageDays - (ageYears*12*30.4166) - (ageMonths*30.4166));
+        let dayCal = Math.floor(ageDays - (ageYears*12*30.417) - (ageMonths*30.417));
 
         console.log(ageMonths);
 
@@ -115,6 +115,7 @@ reset.onclick = () => {
 
     calculateAge.value = '';
     calculateDays.value = '';
+    calculateWeeks.value = '';
     calculateHours.value = '';
     calculateMinutes.value = '';
     calculateSeconds.value = ``;
@@ -127,92 +128,79 @@ reset.onclick = () => {
 
 // Product with LS
 
-
-const addProduct = document.querySelector('#addProduct');
-const displayForm = document.querySelector('.showCard');
-const closeCard = document.querySelector('#closeCard');
-
-const pdName = document.querySelector('#pdName');
-const pdDetails = document.querySelector('#pdDetails');
-const pdRPrice = document.querySelector('#pdRPrice');
-const pdSPrice = document.querySelector('#pdSPrice');
+const productInput = document.querySelector('#productInput');
 const createPd = document.querySelector('#createPd');
-
 const pList = document.querySelector('#pList');
 
-// const productData = [
-//     {
-//         pImage      : './img/product.jpg',
-//         pNam        : 'Bags',
-//         pDetails    : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, obcaecati!',
-//         pPrice      : 300,
-//         sPrice      : 290,    
-//     },
 
-//     {
-//         pImage      : './img/product.jpg',
-//         pNam        : 'Bags',
-//         pDetails    : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, obcaecati!',
-//         pPrice      : 200,
-//         sPrice      : 190,    
-//     },
+productInput.addEventListener( 'submit', function(e){
 
-//     {
-//         pImage      : './img/product.jpg',
-//         pNam        : 'Bags',
-//         pDetails    : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, obcaecati!',
-//         pPrice      : 400,
-//         sPrice      : 390,    
-//     },
+    e.preventDefault();
 
-//     {
-//         pImage      : './img/product.jpg',
-//         pNam        : 'Bags',
-//         pDetails    : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, obcaecati!',
-//         pPrice      : 100,
-//         sPrice      : 90,    
-//     }
-// ];
+    let pdName = this.querySelector('input[name="pdName"]');
+    let pdDetails = this.querySelector('#pdDetails');
+    let pdRprice = this.querySelector('input[name="pdRPrice"]');
+    let pdSprice = this.querySelector('input[name="pdSPrice"]');
+    let pdPhoto = this.querySelector('input[name="pdPhoto"]');
+
+    let productArray;
+
+    if( dataGet('createProducts') ){
+        productArray = dataGet('createProducts');
+    }else{
+        productArray = [];
+    }
+
+    productArray.push({
+        pName       : pdName.value,
+        pDetails    : pdDetails.value,
+        pRprice     : pdRprice.value,
+        pSprice     : pdSprice.value,
+        pPhoto      : pdPhoto.value
+    });
+
+    dataSent('createProducts', productArray);
+
+    allProducts();
+
+    pdName.value = '';
+    pdDetails.value = '';
+    pdRprice.value = '';
+    pdSprice.value = '';
+    pdPhoto.value = '';
+
+} );
+
+allProducts();
+
+function allProducts(){
+
+    let productShow = dataGet('createProducts');
+
+    let dataDisplay = '';
+
+    productShow.map((show) => {
+
+        dataDisplay += `
+        
+            <div class="col-md-3 text-center productWrapper overflow-hidden">
+                <img src="${show.pPhoto}" alt="product">
+                <h3 class="mt-3">${show.pName}</h3>
+                <p>${show.pDetails}</p>
+                <h4 class="mb-4"><span style="color: red;font-size: 20px;" id="rgPrice">$${show.pRprice}</span> <span style="color: rgb(0, 255, 0);font-size: 25px;" id="slprice">$${show.pSprice}</span></h4>
+                <input type="submit" value="Add to cart" class="btn btn-danger w-100 mb-3">
+            </div>
+        
+        `;
+
+    });
+
+    pList.innerHTML = dataDisplay;
+
+}
 
 
-// dataSent('products', productData);
 
-
-let productShow = dataGet('products');
-
-productShow.map((show) => {
-
-    pList.innerHTML += `
-    
-        <div class="col-md-3 text-center productWrapper overflow-hidden">
-            <img src="${show.pImage}" alt="product">
-            <h3 class="mt-3">${show.pNam}</h3>
-            <p>${show.pDetails}</p>
-            <h4 class="mb-4"><span style="color: red;font-size: 20px;" id="rgPrice">$${show.pPrice}</span> <span style="color: rgb(0, 255, 0);font-size: 25px;" id="slprice">$${show.sPrice}</span></h4>
-            <input type="submit" value="Add to cart" class="btn btn-danger w-50 mb-3 float-start">
-            <input type="submit" value="Buy Now" class="btn btn-success w-50 float-end">
-        </div>
-    
-    `;
-
-});
-
-
-
-addProduct.addEventListener('click', function(){
-
-    displayForm.style.display = 'block';
-
-
-
-});
-
-
-closeCard.addEventListener('click', function(){
-
-    displayForm.style.display = 'none';
-
-});
 
 
 
@@ -220,97 +208,95 @@ closeCard.addEventListener('click', function(){
 
 
 
-// const teamData = [
-//     {
-//         nam         : 'Toha Munshi',
-//         skill       : 'CEO',
-//         details     : 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quisquam.',
-//         photo       : './img/boy2.png'
-//     },
-
-//     {
-//         nam         : 'SM Abdullah',
-//         skill       : 'SOFTWARE ENGINEER',
-//         details     : 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quisquam.',
-//         photo       : './img/boy3.png'
-//     },
-
-//     {
-//         nam         : 'Mitu Farzana',
-//         skill       : 'CONTENT WRITER',
-//         details     : 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quisquam.',
-//         photo       : './img/girl.png'
-//     },
-
-//     {
-//         nam         : 'Mostofa Kamal',
-//         skill       : 'VIDEO EDITOR',
-//         details     : 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quisquam.',
-//         photo       : './img/boy3.png'
-//     },
-
-//     {
-//         nam         : 'BM Saifullah',
-//         skill       : 'MARKETING DIRECTOR',
-//         details     : 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quisquam.',
-//         photo       : './img/boy2.png'
-//     },
-
-//     {
-//         nam         : 'Sheikh Ataur',
-//         skill       : 'GRAPHICS DESIGNER',
-//         details     : 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quisquam.',
-//         photo       : './img/boy3.png'
-//     },
-
-//     {
-//         nam         : 'Tofayel Sheikh',
-//         skill       : 'VIDEO EDITOR',
-//         details     : 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quisquam.',
-//         photo       : './img/boy2.png'
-//     },
-
-//     {
-//         nam         : 'Farhan Sheikh',
-//         skill       : 'WEB DEVELOPER',
-//         details     : 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quisquam.',
-//         photo       : './img/boy3.png'
-//     }
-// ];
-
-// dataSent('teamData', teamData);
-
+const teamSubmit = document.querySelector('#teamInput');
 const uploadTeam = document.querySelector('#uploadTeam');
 
-let getValFromLS = dataGet('teamData');
 
+teamSubmit.addEventListener('submit', function(e){
 
-getValFromLS.map((showVal) => {
+    e.preventDefault();
 
-    uploadTeam.innerHTML += `
-    
-    <div class="col-md-3 teamWrapper">
-        <img class="mb-3" src="${showVal.photo}" alt="profile">
-        <h5 class="mb-2">${showVal.nam}</h5>
-        <h6 class="mb-2">${showVal.skills}</h6>
-        <p>${showVal.details}</p>
-        <ul class="socialLiinks">
-            <li>
-                <a href="#"><i class="fab fa-facebook-square"></i></a>
-            </li>
-            <li>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-            </li>
-            <li>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </li>
-        </ul>
-        <button class="btn btn-danger w-100">READ MORE</button>
-    </div>
-    
-    `;
+    let tName = this.querySelector('input[name="devName"]');
+    let tPosition = this.querySelector('input[name="devPosition"]');
+    let tDetails = this.querySelector('#devDetails');
+    let tfbLink = this.querySelector('input[name="fbLink"]');
+    let ttwLink = this.querySelector('input[name="twLink"]');
+    let tinstaLink = this.querySelector('input[name="instaLink"]');
+    let photo = this.querySelector('input[name="photo"]');
+
+    let developers;
+
+    if( dataGet('devsData') ){
+        developers = dataGet('devsData');
+    }else{
+        developers = [];
+    }
+
+    developers.push({
+        tName           : tName.value,
+        tPosition       : tPosition.value,
+        tDetails        : tDetails.value,
+        tfbLink         : tfbLink.value,
+        ttwLink         : ttwLink.value,
+        tinstaLink      : tinstaLink.value,
+        photo           : photo.value
+    });
+
+    dataSent('devsData', developers);
+
+    allDevelopers();
+
+    tName.value = '';
+    tPosition.value = '';
+    tDetails.value = '';
+    tfbLink.value = '';
+    ttwLink.value = '';
+    tinstaLink.value = '';
+    photo.value = '';
 
 });
+
+
+allDevelopers();
+
+
+function allDevelopers(){
+
+    let devsShow = dataGet('devsData');
+
+    let teamDataDisplay = '';
+
+    devsShow.map((showVal) => {
+
+        teamDataDisplay += `
+        
+        <div class="col-md-4 teamWrapper">
+            <img class="mb-3" src="${showVal.photo}" alt="profile">
+            <h5 class="mb-2">${showVal.tName}</h5>
+            <h6 class="mb-2">${showVal.tPosition}</h6>
+            <p>${showVal.tDetails}</p>
+            <ul class="socialLiinks">
+                <li>
+                    <a href="${showVal.tfbLink}"><i class="fab fa-facebook-square"></i></a>
+                </li>
+                <li>
+                    <a href="${showVal.ttwLink}"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                    <a href="${showVal.tinstaLink}"><i class="fab fa-instagram"></i></a>
+                </li>
+            </ul>
+            <button class="btn btn-danger w-100">READ MORE</button>
+        </div>
+        
+        `;
+
+    });
+
+    
+    uploadTeam.innerHTML = teamDataDisplay;
+
+}
 
 
 

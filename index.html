@@ -19,7 +19,7 @@
 <!-- age calculator structure start -->
 
 
-<div id="mainSection" class="conatiner-fluid">
+<div class="conatiner-fluid mainSection">
     <div class="container">
         <h1>How old am i?</h1>
         <div class="col-md-10 wrapper2">
@@ -39,12 +39,12 @@
                 
             </div>
 
-            <div class="row mt-5">
-                <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-8 mt-3">
                     <input id="calculate" type="submit" class="btn btn-success" value="Calculate">
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-4 mt-3">
                     <input id="reset" type="submit" class="btn btn-danger" value="Reset">
                 </div>
             </div>
@@ -127,51 +127,66 @@
 
 <!-- product structure start -->
 
+<div class="mainSection4">
 
+    <!-- <a class="bars" href=""><i class="fas fa-bars"></i></a> -->
 
-<div class="mainSection3">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6 m-auto wrapper">
+    <div class="leftSection same">
 
-                <div class="form-group">
-                    <input id="addProduct" type="submit" class="btn btn-primary w-100" value="ADD NEW PRODUCT">
-                </div>
+        <div class="justify-content-center">
+            <div class="wrapper">
 
                 <div class="card showCard">
                     <div class="card-header alert-dismissible">
                         <button style="color: white;" id="closeCard" class="btn-close"></button>
-                        <h1 class="text-center text-white">ADD NEW PRODUCT</h1>
+                        <h3 class="text-center text-white">ADD NEW PRODUCT</h3>
                     </div>
 
                     <div class="card-body">
-                        <div class="form-group mb-3">
-                            <input id="pdName" type="text" class="form-control" placeholder="Product Name">
-                        </div>
-
-                        <div class="form-group mb-3">
-                            <textarea class="form-control" placeholder="Product Details" id="pdDetails" rows="3"></textarea>
-                        </div>
-
-                        <div class="form-group mb-3">
-                            <input id="pdRPrice" type="number" class="form-control" placeholder="Product Price">
-                        </div>
-
-                        <div class="form-group mb-3">
-                            <input id="pdSPrice" type="number" class="form-control" placeholder="Sale Price">
-                        </div>
-
-                        <div class="form-group">
-                            <input id="createPd" type="submit" class="btn btn-success w-100" value="CREATE PRODUCT">
-                        </div>
+                        <form id="productInput" action="">
+                            <div class="form-group mb-3">
+                                <input name="pdName" id="pdName" type="text" class="form-control" placeholder="Product Name">
+                            </div>
+    
+                            <div class="form-group mb-3">
+                                <textarea class="form-control" placeholder="Product Details" id="pdDetails" rows="3"></textarea>
+                            </div>
+    
+                            <div class="form-group mb-3">
+                                <input name="pdRPrice" id="pdRPrice" type="number" class="form-control" placeholder="Product Price">
+                            </div>
+    
+                            <div class="form-group mb-3">
+                                <input name="pdSPrice" id="pdSPrice" type="number" class="form-control" placeholder="Sale Price">
+                            </div>
+    
+                            <div class="form-group mb-3">
+                                <input  name="pdPhoto" id="pdPhoto" type="text" class="form-control" placeholder="Product Photo">
+                            </div>
+    
+                            <div class="form-group">
+                                <input id="createPd" type="submit" class="btn btn-success w-100" value="CREATE PRODUCT">
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="pList" style="margin: auto 20px;" class="row mt-5 justify-content-center">
+    </div>
+
+
+
+
+    <div class="rightSection same">
+
+        <div class="container">
             
+            <div id="pList" style="margin: auto 20px;" class="row justify-content-center">
+                
+            </div>
         </div>
+
     </div>
 </div>
 
@@ -184,16 +199,78 @@
 
 
 
-<div class="mainSection4">
-    <div class="container">
-        <h1 class="text-center mb-3">Team member with LS</h1>
-        <div id="uploadTeam" class="row text-center">
+<div class="mainSection5">
+
+    <!-- <a class="bars" href=""><i class="fas fa-bars"></i></a> -->
+
+    <div class="leftSection2 same">
+
+        <div class="justify-content-center">
+            <div class="wrapper">
+
+                <div class="card showCard">
+                    <div class="card-header alert-dismissible">
+                        <button style="color: white;" id="closeCard" class="btn-close"></button>
+                        <h3 class="text-center mb-3">Team member with LS</h3>
+                    </div>
+
+                    <div class="card-body">
+                        <form id="teamInput" action="">
+                            <div class="form-group mb-3">
+                                <input name="devName" id="devName" type="text" class="form-control" placeholder="Devs Name">
+                            </div>
+    
+                            <div class="form-group mb-3">
+                                <input name="devPosition" id="devPosition" type="text" class="form-control" placeholder="Position">
+                            </div>
+    
+                            <div class="form-group mb-3">
+                                <textarea class="form-control" placeholder="Devs Details" id="devDetails" rows="3"></textarea>
+                            </div>
+    
+                            <div class="form-group mb-3">
+                                <input name="fbLink" id="fbLink" type="text" class="form-control" placeholder="FB Link">
+                            </div>
+    
+                            <div class="form-group mb-3">
+                                <input  name="twLink" id="twLink" type="text" class="form-control" placeholder="Twitter Link">
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <input  name="instaLink" id="instaLink" type="text" class="form-control" placeholder="Instagram Link">
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <input  name="photo" id="photo" type="text" class="form-control" placeholder="Photo">
+                            </div>
+    
+                            <div class="form-group">
+                                <input id="createTeam" type="submit" class="btn btn-success w-100" value="CREATE">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <div class="rightSection2">
+
+        <div class="container">
+            <div id="uploadTeam" style="margin: auto 20px;" class="row justify-content-center">
 
             
 
+            </div>
         </div>
+
     </div>
 </div>
+
 
 
 
