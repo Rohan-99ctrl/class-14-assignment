@@ -131,49 +131,79 @@
 
     <!-- <a class="bars" href=""><i class="fas fa-bars"></i></a> -->
 
-    <div class="leftSection same">
+    <div style="text-align: center;margin-bottom: 50px;">
+        <button type="button" class="btn btn-primary btn-lg m-5" data-bs-toggle="modal" data-bs-target="#myModal">Add New Product</button>
+    </div>
 
-        <div class="justify-content-center">
-            <div class="wrapper">
 
-                <div class="card showCard">
-                    <div class="card-header alert-dismissible">
-                        <button style="color: white;" id="closeCard" class="btn-close"></button>
-                        <h3 class="text-center text-white">ADD NEW PRODUCT</h3>
-                    </div>
+    <!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <h3 class="text-center text-white">ADD NEW PRODUCT</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <div class="leftSection same">
 
-                    <div class="card-body">
-                        <form id="productInput" action="">
-                            <div class="form-group mb-3">
-                                <input name="pdName" id="pdName" type="text" class="form-control" placeholder="Product Name">
+                <div class="justify-content-center">
+                    <div class="wrapper">
+        
+                        <div class="card showCard">
+                            <div class="card-header alert-dismissible">
+                                <button style="color: white;" id="closeCard" class="btn-close"></button>
                             </div>
-    
-                            <div class="form-group mb-3">
-                                <textarea class="form-control" placeholder="Product Details" id="pdDetails" rows="3"></textarea>
+        
+                            <div class="card-body">
+                                <form id="productInput" action="">
+                                    <div class="form-group mb-3">
+                                        <input name="pdName" id="pdName" type="text" class="form-control" placeholder="Product Name">
+                                    </div>
+            
+                                    <div class="form-group mb-3">
+                                        <textarea class="form-control" placeholder="Product Details" id="pdDetails" rows="3"></textarea>
+                                    </div>
+            
+                                    <div class="form-group mb-3">
+                                        <input name="pdRPrice" id="pdRPrice" type="number" class="form-control" placeholder="Product Price">
+                                    </div>
+            
+                                    <div class="form-group mb-3">
+                                        <input name="pdSPrice" id="pdSPrice" type="number" class="form-control" placeholder="Sale Price">
+                                    </div>
+            
+                                    <div class="form-group mb-3">
+                                        <input  name="pdPhoto" id="pdPhoto" type="text" class="form-control" placeholder="Product Photo">
+                                    </div>
+            
+                                    <div class="form-group">
+                                        <input id="createPd" type="submit" class="btn btn-success w-100" value="CREATE PRODUCT">
+                                    </div>
+                                </form>
                             </div>
-    
-                            <div class="form-group mb-3">
-                                <input name="pdRPrice" id="pdRPrice" type="number" class="form-control" placeholder="Product Price">
-                            </div>
-    
-                            <div class="form-group mb-3">
-                                <input name="pdSPrice" id="pdSPrice" type="number" class="form-control" placeholder="Sale Price">
-                            </div>
-    
-                            <div class="form-group mb-3">
-                                <input  name="pdPhoto" id="pdPhoto" type="text" class="form-control" placeholder="Product Photo">
-                            </div>
-    
-                            <div class="form-group">
-                                <input id="createPd" type="submit" class="btn btn-success w-100" value="CREATE PRODUCT">
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
+        
             </div>
         </div>
-
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
     </div>
+  </div>
+
+
+    
 
 
 
@@ -201,59 +231,127 @@
 
 <div class="mainSection5">
 
-    <!-- <a class="bars" href=""><i class="fas fa-bars"></i></a> -->
+    <div style="text-align: center;margin-bottom: 50px;">
+        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#myModal2">Add Team Member</button>
+    </div>
 
-    <div class="leftSection2 same">
 
-        <div class="justify-content-center">
-            <div class="wrapper">
 
-                <div class="card showCard">
-                    <div class="card-header alert-dismissible">
-                        <button style="color: white;" id="closeCard" class="btn-close"></button>
-                        <h3 class="text-center mb-3">Team member with LS</h3>
-                    </div>
+<!-- The Modal -->
+<div class="modal" id="myModal2">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <h3 class="text-center mb-3">Team member with LS</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <div class="leftSection2">
 
-                    <div class="card-body">
-                        <form id="teamInput" action="">
-                            <div class="form-group mb-3">
-                                <input name="devName" id="devName" type="text" class="form-control" placeholder="Devs Name">
+                <div class="justify-content-center">
+                    <div class="wrapper">
+        
+                        <div class="card showCard">
+                            <div class="card-header alert-dismissible">
+                                <button style="color: white;" id="closeCard" class="btn-close"></button>
                             </div>
-    
-                            <div class="form-group mb-3">
-                                <input name="devPosition" id="devPosition" type="text" class="form-control" placeholder="Position">
+        
+                            <div class="card-body">
+                                <form id="teamInput" action="">
+                                    <div class="form-group mb-3">
+                                        <input name="devName" id="devName" type="text" class="form-control" placeholder="Devs Name">
+                                    </div>
+            
+                                    <div class="form-group mb-3" style="text-align: left;">
+                                        <strong>Position :</strong>
+                                        <br>
+                                        <br>
+                                        <div class="form-check">
+                                            <input type="radio" class="form-check-input" id="react" name="position" value="React Developer">
+                                            <label class="form-check-label" for="react">React Developer</label>
+                                            <br>
+                                            <input type="radio" class="form-check-input" id="laravel" name="position" value="Laravel Developer">
+                                            <label class="form-check-label" for="laravel">Laravel Developer</label>
+                                            <br>
+                                            <input type="radio" class="form-check-input" id="python" name="position" value="Python Developer">
+                                            <label class="form-check-label" for="python">Python Developer</label>
+                                            <br>
+                                            <input type="radio" class="form-check-input" id="ios" name="position" value="IOS Developer">
+                                            <label class="form-check-label" for="ios">IOS Developer</label>
+                                        </div>
+                                    </div>
+        
+                                    <div class="form-group mb-3">
+                                        <strong>Skills :</strong>
+                                        <br>
+                                        <br>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="html5" name="skill" value="HTML5">
+                                            <label class="form-check-label" for="html5">HTML5</label>
+                                            <br>
+        
+                                            <input type="checkbox" class="form-check-input" id="CSS3" name="skill" value="CSS3">
+                                            <label class="form-check-label" for="CSS3">CSS3</label>
+                                            <br>
+        
+                                            <input type="checkbox" class="form-check-input" id="javascript" name="skill" value="javascript">
+                                            <label class="form-check-label" for="javascript">JavaScript / Mern</label>
+                                            <br>
+        
+                                            <input type="checkbox" class="form-check-input" id="reactjs" name="skill" value="React JS">
+                                            <label class="form-check-label" for="reactjs">React JS</label>
+                                            <br>
+        
+                                            <input type="checkbox" class="form-check-input" id="pythonDjango" name="skill" value="Python">
+                                            <label class="form-check-label" for="pythonDjango">Python / Django</label>
+                                            <br>
+        
+                                            <input type="checkbox" class="form-check-input" id="php" name="skill" value="PHP">
+                                            <label class="form-check-label" for="php">PHP / Laravel</label>
+                                        </div>
+                                    </div>
+            
+                                    <div class="form-group mb-3">
+                                        <input name="fbLink" id="fbLink" type="text" class="form-control" placeholder="FB Link">
+                                    </div>
+            
+                                    <div class="form-group mb-3">
+                                        <input  name="twLink" id="twLink" type="text" class="form-control" placeholder="Twitter Link">
+                                    </div>
+        
+                                    <div class="form-group mb-3">
+                                        <input  name="instaLink" id="instaLink" type="text" class="form-control" placeholder="Instagram Link">
+                                    </div>
+        
+                                    <div class="form-group mb-3">
+                                        <input  name="photo" id="photo" type="text" class="form-control" placeholder="Photo">
+                                    </div>
+            
+                                    <div class="form-group">
+                                        <input id="createTeam" type="submit" class="btn btn-success w-100" value="CREATE">
+                                    </div>
+                                </form>
                             </div>
-    
-                            <div class="form-group mb-3">
-                                <textarea class="form-control" placeholder="Devs Details" id="devDetails" rows="3"></textarea>
-                            </div>
-    
-                            <div class="form-group mb-3">
-                                <input name="fbLink" id="fbLink" type="text" class="form-control" placeholder="FB Link">
-                            </div>
-    
-                            <div class="form-group mb-3">
-                                <input  name="twLink" id="twLink" type="text" class="form-control" placeholder="Twitter Link">
-                            </div>
-
-                            <div class="form-group mb-3">
-                                <input  name="instaLink" id="instaLink" type="text" class="form-control" placeholder="Instagram Link">
-                            </div>
-
-                            <div class="form-group mb-3">
-                                <input  name="photo" id="photo" type="text" class="form-control" placeholder="Photo">
-                            </div>
-    
-                            <div class="form-group">
-                                <input id="createTeam" type="submit" class="btn btn-success w-100" value="CREATE">
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
+        
             </div>
         </div>
-
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
     </div>
+  </div>
+
 
 
 
@@ -263,7 +361,7 @@
         <div class="container">
             <div id="uploadTeam" style="margin: auto 20px;" class="row justify-content-center">
 
-            
+
 
             </div>
         </div>

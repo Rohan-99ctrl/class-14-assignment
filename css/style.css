@@ -100,6 +100,7 @@ p.show{
 
 
 div.mainSection4{
+    padding: 70px 0px;
     background-image: url(../img/bgimage2.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -108,41 +109,6 @@ div.mainSection4{
     overflow: hidden;
 }
 
-
-
-div.leftSection{
-    padding: 0px 0px;
-    width: 20%;
-    height: auto;
-    float: left;
-    background-color: rgba(255, 84, 255, 0.685);
-    margin: 0;
-}
-div.rightSection{
-    padding: 50px 10px;
-    width: 80%;
-    height: auto;
-    float: right;
-}
-
-a.bars{
-    width: 50px;
-    height: 50px;
-    display: block;
-    background-color: orangered;
-    color: white;
-    border-radius: 50%;
-    transition: all 0.3s;
-}
-a.bars:hover {
-    background-color: rgb(250, 114, 89);
-    transform: scale(0.9);
-}
-
-a.bars i{
-    padding:15px;
-    font-size: 22px;
-}
 
 
 #addProduct{
@@ -200,12 +166,21 @@ div.productWrapper img{
 /* team member design start */
 
 div.mainSection5{
+    padding: 70px 0px;
     background-image: url(../img/bgimage5.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
     overflow: hidden;
+}
+
+
+.modal-content{
+    background-image: url(../img/bgimage6.jpg) !important;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
@@ -222,20 +197,6 @@ div.teamWrapper{
     text-align: center;
 }
 
-div.leftSection2{
-    padding: 0px 0px;
-    width: 20%;
-    height: auto;
-    float: left;
-    background-color: rgba(255, 84, 255, 0.685);
-    margin: 0;
-}
-div.rightSection2{
-    padding: 50px 10px;
-    width: 80%;
-    height: auto;
-    float: right;
-}
 
 div.teamWrapper:hover{
     background-color: rgba(0, 0, 0, 0.438);

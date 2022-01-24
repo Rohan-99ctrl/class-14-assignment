@@ -216,13 +216,24 @@ teamSubmit.addEventListener('submit', function(e){
 
     e.preventDefault();
 
-    let tName = this.querySelector('input[name="devName"]');
-    let tPosition = this.querySelector('input[name="devPosition"]');
-    let tDetails = this.querySelector('#devDetails');
-    let tfbLink = this.querySelector('input[name="fbLink"]');
-    let ttwLink = this.querySelector('input[name="twLink"]');
-    let tinstaLink = this.querySelector('input[name="instaLink"]');
+    let devName = this.querySelector('input[name="devName"]');
+    let devPosition = this.querySelector('input[name="position"]:checked');
+    let devSkill = this.querySelectorAll('input[name="skill"]:checked');
+    let devfbLink = this.querySelector('input[name="fbLink"]');
+    let devtwLink = this.querySelector('input[name="twLink"]');
+    let devinstaLink = this.querySelector('input[name="instaLink"]');
     let photo = this.querySelector('input[name="photo"]');
+    
+    
+
+    let devSkillArr = [];
+
+    for (let i = 0; i < devSkill.length; i++){
+
+        devSkillArr.push(devSkill[i].value);
+
+    }
+
 
     let developers;
 
@@ -233,12 +244,12 @@ teamSubmit.addEventListener('submit', function(e){
     }
 
     developers.push({
-        tName           : tName.value,
-        tPosition       : tPosition.value,
-        tDetails        : tDetails.value,
-        tfbLink         : tfbLink.value,
-        ttwLink         : ttwLink.value,
-        tinstaLink      : tinstaLink.value,
+        devName         : devName.value,
+        devPosition     : devPosition.value,
+        devSkills       : devSkillArr,
+        devfbLink       : devfbLink.value,
+        devtwLink       : devtwLink.value,
+        devinstaLink    : devinstaLink.value,
         photo           : photo.value
     });
 
@@ -246,12 +257,10 @@ teamSubmit.addEventListener('submit', function(e){
 
     allDevelopers();
 
-    tName.value = '';
-    tPosition.value = '';
-    tDetails.value = '';
-    tfbLink.value = '';
-    ttwLink.value = '';
-    tinstaLink.value = '';
+    devName.value = '';
+    devfbLink.value = '';
+    devtwLink.value = '';
+    devinstaLink.value = '';
     photo.value = '';
 
 });
@@ -268,22 +277,27 @@ function allDevelopers(){
 
     devsShow.map((showVal) => {
 
+        let devSk = '';
+        showVal.devSkills.map((dataSkill) => {
+            devSk += `<span class="badge bg-info m-1">${dataSkill}</span>`;
+        });
+
         teamDataDisplay += `
         
         <div class="col-md-4 teamWrapper">
             <img class="mb-3" src="${showVal.photo}" alt="profile">
-            <h5 class="mb-2">${showVal.tName}</h5>
-            <h6 class="mb-2">${showVal.tPosition}</h6>
-            <p>${showVal.tDetails}</p>
+            <h5 class="mb-2">${showVal.devName}</h5>
+            <h6 class="mb-2">${showVal.devPosition}</h6>
+            <p>${devSk}</p>
             <ul class="socialLiinks">
                 <li>
-                    <a href="${showVal.tfbLink}"><i class="fab fa-facebook-square"></i></a>
+                    <a href="${showVal.devfbLink}"><i class="fab fa-facebook-square"></i></a>
                 </li>
                 <li>
-                    <a href="${showVal.ttwLink}"><i class="fab fa-twitter"></i></a>
+                    <a href="${showVal.devtwLink}"><i class="fab fa-twitter"></i></a>
                 </li>
                 <li>
-                    <a href="${showVal.tinstaLink}"><i class="fab fa-instagram"></i></a>
+                    <a href="${showVal.devinstaLink}"><i class="fab fa-instagram"></i></a>
                 </li>
             </ul>
             <button class="btn btn-danger w-100">READ MORE</button>
